@@ -1,8 +1,6 @@
 // src/index.js
-import $ from "jquery";
+const $ = require("jquery");
 
-$(document).ready(function () {
-  $("body").append("<p>Paragraph 1</p>");
-  $("body").append("<p>Paragraph 2</p>");
-  $("body").append("<p>Paragraph 3</p>");
-});
+$("body").append("<p>Holberton Dashboard</p>");
+$("body").append("<p>Dashboard data for the students</p>");
+$("body").append("<p>Copyright - Holberton School</p>");
