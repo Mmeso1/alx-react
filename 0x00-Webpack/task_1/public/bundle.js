@@ -15,7 +15,7 @@
   \******************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\nconst _ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n\n$(\"body\").append(\"<p>Holberton Dashboard</p>\");\n$(\"body\").append(\"<p>Dashboard data for the students</p>\");\n$(\"body\").append(\"<button>Click here to get started</button>\");\n$(\"body\").append(\"<p id='count'></p>\");\n$(\"body\").append(\"<p>Copyright - Holberton School</p>\");\n\nfunction updateCounter() {\n  const count = $(\"#count\").text() || 0;\n  $(\"#count\").text(`${parseInt(count) + 1} clicks on the button`);\n}\n\n$(\"button\").on(\"click\", _.debounce(updateCounter, 300));\n\n\n//# sourceURL=webpack://task_1/./js/dashboard_main.js?");
+eval("const $ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n// Load the full build\nconst _ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n\nlet count = 0;\n\nfunction updateCounter() {\n  count++;\n  $(\"#count\").text(`${count} clicks on the button`);\n}\n\nconst $button = $(\"<button>Click here to get started</button>\").on(\n  \"click\",\n  _.debounce(updateCounter, 500, { leading: true, trailing: false })\n);\n\n$(\"body\").append(\"<p>Holberton Dashboard</p>\");\n$(\"body\").append(\"<p>Dashboard data for the students</p>\");\n$(\"body\").append($button);\n$(\"body\").append(\"<p id='count'></p>\");\n$(\"body\").append(\"<p>Copyright - Holberton School</p>\");\n\n\n//# sourceURL=webpack://task_1/./js/dashboard_main.js?");
 
 /***/ }),
 
