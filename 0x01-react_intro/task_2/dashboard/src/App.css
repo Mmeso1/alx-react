@@ -7,8 +7,6 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -38,6 +36,7 @@ body {
 
 .App-body {
   margin: 2rem;
+  line-height: 2;
 }
 
 .App-footer {
