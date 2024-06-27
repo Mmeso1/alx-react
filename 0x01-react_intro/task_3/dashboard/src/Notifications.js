@@ -14,7 +14,7 @@ export function Notification() {
       className="container"
       style={{ position: "relative" }}
     >
-      Here is the notification
+      Here is the list of notifications
       <button
         aria-label="close"
         style={{ position: "absolute", right: 0, top: 0, display: "inline" }}

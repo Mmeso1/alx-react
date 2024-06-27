@@ -15,9 +15,7 @@ describe("getFooterCopy function", () => {
 
   it("returns the expected string if arg value is false", () => {
     const falseFooterCopy = getFooterCopy(false);
-    expect(falseFooterCopy).toEqual(
-      "<strong>Urgent requirement</strong> - complete by EOD"
-    );
+    expect(falseFooterCopy).toEqual("Holberton School main dashboard");
   });
 });
 
