@@ -33,7 +33,9 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    window.addEventListener("keydown", this.handleKeyPress);
+    if (typeof window !== "undefined") {
+      window.addEventListener("keydown", this.handleKeyPress);
+    }
   }
 
   render() {
@@ -55,6 +57,12 @@ class App extends Component {
         </div>
       </React.Fragment>
     );
+  }
+
+  componentWillUnmount() {
+    if (typeof window !== "undefined") {
+      window.removeEventListener("keydown", this.handleKeyPress);
+    }
   }
 }
 
