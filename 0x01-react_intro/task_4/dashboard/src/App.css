@@ -1,0 +1,49 @@
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --primary-color: #e0354c;
+  --text-color: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.App-header img {
+  height: 200px;
+  width: 200px;
+}
+
+.App-body {
+  margin: 2rem;
+  line-height: 2;
+}
+
+.App-footer {
+  display: flex;
+  justify-content: center;
+  border-top: 3px solid var(--primary-color);
+  margin-top: auto;
+  padding: 1rem 0;
+  font-style: italic;
+}

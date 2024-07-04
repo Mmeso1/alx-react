@@ -1,0 +1,21 @@
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --primary-color: #e0354c;
+  --secondary-color: #240d68;
+  --text-color: #333;
+}
+
+.container {
+  font-family: var(--font-family);
+  border: 2px dashed var(--primary-color);
+  padding: 2rem;
+}
+
+.container ul li {
+  color: var(--secondary-color);
+}
+
+.container ul li + li {
+  color: var(--primary-color);
+}
