@@ -24,9 +24,9 @@ describe("App tests", () => {
     expect(component.contains(<Header />)).toBe(true);
   });
   it("should render Login Component", () => {
-    const component = shallow(<App />);
+    const component = shallow(<App isLoggedIn={false} />);
 
-    expect(component.contains(<Login />)).toBe(false);
+    expect(component.containsMatchingElement(<Login />)).toEqual(true);
   });
   it("should render Footer component", () => {
     const component = shallow(<App />);
@@ -45,5 +45,17 @@ describe("App tests", () => {
 
     expect(component.containsMatchingElement(<CourseList />)).toEqual(false);
     expect(component.contains(<Login />)).toBe(false);
+  });
+  it("handles keypress, alerts and logs out", () => {
+    const alert = jest.spyOn(window, "alert");
+    const logOut = jest.fn();
+    const component = shallow(<App logOut={logOut} />);
+    const instance = component.instance();
+    const event = { ctrlKey: true, key: "h", preventDefault: jest.fn() };
+
+    instance.handleKeyPress(event);
+
+    expect(alert).toHaveBeenCalledWith("Logging you out");
+    expect(logOut).toHaveBeenCalled();
   });
 });
